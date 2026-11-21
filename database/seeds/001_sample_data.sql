@@ -1,0 +1,2 @@
+-- 001_sample_data.sql
+-- Chứa dữ liệu mẫu (không chứa dữ liệu cá nhân thật) dùng để phát triển và demo.

@@ -1,0 +1,2 @@
+-- Bản tổng hợp schema hiện tại của Hệ thống Quản lý Thư viện Số.
+-- Nguồn chạy chính thức nằm trong database/migrations/.
