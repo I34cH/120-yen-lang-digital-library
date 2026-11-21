@@ -2,6 +2,7 @@ import os
 from dataclasses import dataclass
 from dotenv import load_dotenv
 
+load_dotenv("backend/.env")
 load_dotenv()
 
 
@@ -11,9 +12,12 @@ class Settings:
     app_name: str = os.getenv("APP_NAME", "University Digital Library API")
     database_url: str = os.getenv(
         "DATABASE_URL",
-        "postgresql+psycopg://postgres:postgres@localhost:5432/digital_library",
+        "postgresql+psycopg://postgres:postgres@127.0.0.1:5432/digital_library",
     )
-    cors_origins_raw: str = os.getenv("CORS_ORIGINS", "http://localhost:5173")
+    cors_origins_raw: str = os.getenv(
+        "CORS_ORIGINS",
+        "http://localhost:5173,http://127.0.0.1:5173",
+    )
 
     @property
     def cors_origins(self) -> list[str]:
