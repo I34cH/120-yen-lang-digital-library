@@ -1,0 +1,26 @@
+# Chạy trên VM 2 (Backend).
+# Trước khi chạy: copy .env.example -> .env và điền IP thật của VM 3 cùng thông tin xác thực.
+
+services:
+  backend:
+    build:
+      context: ../..
+      dockerfile: backend/Dockerfile
+    container_name: digital_library_backend
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "python",
+          "-c",
+          "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/health')",
+        ]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+      start_period: 5s

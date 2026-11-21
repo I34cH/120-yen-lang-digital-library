@@ -80,8 +80,9 @@ git push
 1. Vào GitHub → bấm **Compare & pull request** (từ nhánh của bạn → `main`).
 2. Điền đầy đủ nội dung theo mẫu PR (mô tả đã làm gì, gắn `Closes #<số-issue>` nếu có, ảnh chụp nếu sửa UI).
 3. Ở cột **Reviewers** bên phải, gắn ít nhất **1 thành viên khác** trong nhóm để review.
+   - **Quy định bắt buộc của môn học (Mục IV.2):** Người review **phải mở tab `Files changed`**, nêu nhận xét kỹ thuật hoặc ghi rõ kết quả đã chạy thử (API/UI/SQL) — **không chỉ ghi `"OK"`** rồi bấm Approve.
 4. Nếu người review góp ý cần sửa: cứ sửa code ngay trên nhánh cũ, `git commit` rồi `git push` — **PR sẽ tự động cập nhật**, không cần mở PR mới.
-5. Khi GitHub Actions CI báo xanh và đã có **Approve** → bấm **Squash and merge** (hoặc **Merge pull request**) → bấm **Delete branch** trên GitHub.
+5. Khi GitHub Actions CI báo xanh (`backend`, `frontend`, `docker`) và đã có **Approve** → bấm **Squash and merge** (hoặc **Merge pull request**) → bấm **Delete branch** trên GitHub.
 6. Dọn nhánh cũ ở máy local để chuẩn bị làm task mới:
    ```bash
    git checkout main
